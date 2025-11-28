@@ -1,43 +1,42 @@
-# Ex.No:3(F) WRAPPER CLASS
+# Ex.No:3(E) INNER CLASS
 
 ## QUESTION:
-Write a Java program that uses the Boolean wrapper class in conditional logic to determine a pass/fail result.
+ Write a Java program where the inner class is declared private and accessed through a method in the outer class. 
 
 
-<img width="248" height="126" alt="image" src="https://github.com/user-attachments/assets/3eabcb45-58b0-4e42-baca-6f38d1a607eb" />
-
+ <img width="461" height="155" alt="image" src="https://github.com/user-attachments/assets/659b05c4-cc0f-481c-a674-fd2c0839109d" />
 
 
 
 ## AIM:
-To demonstrate using the Boolean wrapper class in conditional logic to determine pass/fail in Java.
+To demonstrate accessing a private inner class in Java through a public method of the outer class.
 
 
 ## ALGORITHM :
 1.	Start the program.
 
-2. Create a Scanner object to take input from the user.
+2. Create a Scanner object to take integer input from the user.
 
-3. Read the integer value marks from the user.
+3. Read an integer value from the user.
 
-4. Use the Boolean wrapper class to store the condition marks >= 50 in isPass.
+4. Create an object of the OuterClass.
 
-5. If isPass is true, print "Result: Pass".
+5. Call the accessInner() method of OuterClass, passing the input value.
 
-6. Otherwise, print "Result: Fail".
+6. Inside accessInner(), create an object of the private inner class InnerClass.
 
-7. Close the scanner.
+7. Call the setData() method of InnerClass to store and print the value.
 
-8. End the program.
+8. Close the scanner.
 
-
+9. End the program.
 
 
 
 ## PROGRAM:
  ```
 /*
-Program to implement a Wrapper Class using Java
+Program to implement a InnerClass using Java
 Developed by: Swathi S
 RegisterNumber: 212223040220
 */
@@ -48,35 +47,43 @@ RegisterNumber: 212223040220
 ```
 import java.util.Scanner;
 
-public class Main {
+public class OuterClass {
+    
+    private class InnerClass {
+        private int data;
+
+        void setData(int value) {
+            data = value;
+            System.out.println("Data set inside private inner class: " + data);
+        }
+    }
+
+    void accessInner(int value) {
+        InnerClass inner = new InnerClass();
+        inner.setData(value);
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int marks = sc.nextInt();
-
-        Boolean isPass = marks >= 50;  
-
-        if (isPass) {
-            System.out.println("Result: Pass");
-        } else {
-            System.out.println("Result: Fail");
-        }
-
+        int value = sc.nextInt();
+        
+        OuterClass outer = new OuterClass();
+        outer.accessInner(value);
+        
         sc.close();
     }
 }
 ```
 
 
-
-
-
 ## OUTPUT:
 
 
-<img width="455" height="261" alt="image" src="https://github.com/user-attachments/assets/5f60042e-24d1-425b-b8ea-05d781228835" />
+<img width="806" height="324" alt="image" src="https://github.com/user-attachments/assets/432d4af1-9524-4689-85fb-d38f11ee0f05" />
 
 
 ## RESULT:
-The program evaluates a Boolean condition using Boolean and displays whether the student passed or failed.
+
+The private inner class is successfully invoked using an outer-class method.
 
 
