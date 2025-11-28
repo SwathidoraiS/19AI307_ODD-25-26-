@@ -10,7 +10,7 @@ Write a Java program that uses the Boolean wrapper class in conditional logic to
 
 
 ## AIM:
-To demonstrate using the Boolean wrapper class in conditional logic to determine pass/fail in Java.
+To demonstrate using the Boolean wrapper class in conditional logic to determine pass/fail in Java. 
 
 
 ## ALGORITHM :
@@ -78,5 +78,6 @@ public class Main {
 
 ## RESULT:
 The program evaluates a Boolean condition using Boolean and displays whether the student passed or failed.
+
 
 
